@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -13,11 +14,13 @@
 </head>
 <body>
 <h1>Привет мир!</h1>
-<form>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="form-group">
         <label for="exampleFormControlFile1">выберете XML файл </label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="xml">
     </div>
+    <button type="submit">Upload file</button>
 </form>
 <!-- Дополнительный JavaScript; выберите один из двух! -->
 
